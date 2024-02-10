@@ -454,16 +454,49 @@ section {
   font-style: normal;
 }
 
+
 .skills .progress-bar-wrap {
-  background: #dce8f8;
-  height: 10px;
+background: #e6e6e6;
+height: 20px;
+border-radius: 10px;
+overflow: hidden;
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: #149ddd;
+width: 0;
+height: 20px;
+transition: width 1s ease-in-out;
+background-color: #149ddd;
+background-image: linear-gradient(45deg, #0575e6, #021b79);
+box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for interactivity */
+.skills .progress:hover .progress-bar {
+box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* Animation */
+@keyframes load {
+from {
+  width: 0;
+}
+to {
+  width: 100%;
+}
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.skills .progress .skill {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skills .progress .skill .val {
+  margin-top: 10px;
+}
 }
 
 /*--------------------------------------------------------------
