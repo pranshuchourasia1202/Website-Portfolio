@@ -69,90 +69,115 @@ h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 #header {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 300px;
-  transition: all ease-in-out 0.5s;
-  z-index: 9997;
-  transition: all 0.5s;
   padding: 0 15px;
-  background: #040b14;
+  background: #313233;
   overflow-y: auto;
+  transition: all 0.5s ease-in-out;
+  z-index: 9997;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Initial state of the image with fade-in animation */
 #header .profile img {
-  margin: 15px auto;
-  display: block;
-  width: 120px;
-  border: 8px solid #2c2f3f;
+  display: inline-block;
+  width: 200px;
+  height: 300px;
+  border: 5px solid #c9cbd3;
+  margin: 25px;
+  opacity: 0; /* Start with 0 opacity for the fade-in effect */
+  animation: fadeIn 5s forwards; /* Use forwards to retain the final state */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Prepare for hover effects */
 }
 
-#header .profile h1 {
+/* Hover effects */
+#header .profile img:hover {
+  transform: scale(1.1); /* Scale effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Optional: Adds shadow for depth */
+}
+#header .profile h1,
+#header .profile h1 a {
   font-size: 24px;
   margin: 0;
   padding: 0;
   font-weight: 600;
-  -moz-text-align-last: center;
   text-align-last: center;
   font-family: "Poppins", sans-serif;
-}
-
-#header .profile h1 a,
-#header .profile h1 a:hover {
   color: #fff;
   text-decoration: none;
 }
 
 #header .profile .social-links a {
-  font-size: 18px;
+  font-size: 30px;
   display: inline-block;
   background: #212431;
   color: #fff;
   line-height: 1;
-  padding: 8px 0;
-  margin-right: 4px;
+  padding: 10px 0;
+  margin-right: 5px;
+  margin: 10px;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.5s;
 }
 
 #header .profile .social-links a:hover {
   background: #149ddd;
-  color: #fff;
-  text-decoration: none;
+  transform: translateY(-10px) scale(1.1) rotate(-15deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 #main {
   margin-left: 300px;
 }
 
-.container,
-.container-fluid {
-  padding-left: 30px;
-  padding-right: 30px;
+.container, .container-fluid {
+  padding: 0 30px;
 }
 
 @media (max-width: 1199px) {
   #header {
     left: -300px;
   }
-
   #main {
     margin-left: 0;
   }
-
-  .container,
-  .container-fluid {
-    padding-left: 12px;
-    padding-right: 12px;
+  .container, .container-fluid {
+    padding: 0 12px;
   }
 }
 
+#header .profile .social-links a.twitter:hover { background-color: #1DA1F2; }
+#header .profile .social-links a.facebook:hover { background-color: #3b5998; }
+#header .profile .social-links a.instagram:hover {
+  background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%),
+              radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%),
+              radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%),
+              radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%),
+              radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%),
+              radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%),
+              radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent),
+              linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+}
+#header .profile .social-links a.gmail:hover { background-color: #db4437; }
+#header .profile .social-links a.linkedin:hover { background-color: #0077B5; }
+#header .profile .social-links a.github:hover { background-color: #333; } 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
