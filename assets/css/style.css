@@ -546,63 +546,82 @@ to {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+/* Base styling */
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
   margin-top: 20px;
   margin-bottom: 20px;
   color: #050d18;
+  transition: color 0.5s ease; /* Smooth transition for text color */
 }
 
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #1f5297;
+  border-left: 2px solid transparent; /* Initially transparent */
   position: relative;
+  animation: drawLine 2s forwards; /* Animated border */
+  transition: transform 0.3s ease, background-color 0.5s ease; /* Smooth transitions for transform and background */
 }
 
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 16px;
-  background: #e4edf9;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
+.resume .resume-item h4,
+.resume .resume-item h5,
 .resume .resume-item ul li {
-  padding-bottom: 10px;
+  transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
-.resume .resume-item:last-child {
-  padding-bottom: 0;
+.resume .resume-item:hover {
+  transform: scale(1.05); /* Subtle zoom effect */
+  background-color: rgba(228, 237, 249, 0.3); /* Slight background highlight */
 }
 
+/* Animated timeline effect */
+@keyframes drawLine {
+  to {
+    border-color: #778faf;
+  }
+}
+
+/* 3D effect for bullets/icons */
 .resume .resume-item::before {
   content: "";
   position: absolute;
   width: 16px;
   height: 16px;
-  border-radius: 50px;
-  left: -9px;
+  border-radius: 50%;
+  left: -10px;
   top: 0;
   background: #fff;
   border: 2px solid #1f5297;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d; /* Enable 3D transformations */
 }
+
+.resume .resume-item:hover::before {
+  transform: rotateY(360deg); /* Full rotation effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .resume .resume-title {
+    font-size: 20px; /* Smaller font size on mobile */
+  }
+
+  .resume .resume-item {
+    padding-left: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .resume .resume-item h4 {
+    font-size: 16px; /* Adjusted font size */
+  }
+
+  .resume .resume-item h5 {
+    font-size: 14px; /* Adjusted font size */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Portfolio
