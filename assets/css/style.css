@@ -390,36 +390,70 @@ section {
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-.about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #173b6c;
-}
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
 
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
+#about .body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
 }
-
-.about .content ul strong {
-  margin-right: 10px;
+#about .container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: #149ddd;
-  line-height: 0;
+#about h2 {
+  text-align: center;
+  color: #333;
 }
-
-.about .content p:last-child {
-  margin-bottom: 0;
+#about .collapsible {
+  margin-bottom: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#about .lbl-toggle {
+  display: block;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 15px;
+  cursor: pointer;
+  color: #FFFFFF;
+  background: #007bff;
+  border-radius: 5px 5px 0 0;
+  transition: background-color 0.3s ease;
+}
+#about .lbl-toggle:hover {
+  background: #0056b3;
+}
+#about .toggle {
+  display: none;
+}
+#about .collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+}
+#about .content-inner {
+  padding: 20px;
+}
+#about .toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 1000px;
+}
+#about .toggle:checked + .lbl-toggle {
+  border-radius: 5px 5px 0 0;
+}
+#about .collapsible:hover .collapsible-content {
+  max-height: 1000px;
+}
+#about .collapsible:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /*--------------------------------------------------------------
@@ -474,7 +508,7 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Akills
+# Skills
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
