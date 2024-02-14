@@ -424,12 +424,12 @@ section {
   padding: 15px;
   cursor: pointer;
   color: #FFFFFF;
-  background: #007bff;
+  background: #7b98b9;
   border-radius: 5px 5px 0 0;
   transition: background-color 0.3s ease;
 }
 #about .lbl-toggle:hover {
-  background: #0056b3;
+  background: #46586b;
 }
 #about .toggle {
   display: none;
@@ -437,7 +437,7 @@ section {
 #about .collapsible-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease-in-out;
+  transition: max-height 1.0s ease-in-out;
 }
 #about .content-inner {
   padding: 20px;
@@ -1233,4 +1233,28 @@ to {
     width: auto;
     padding-right: 20px 15px;
   }
+}
+
+
+/*--------------------------------------------------------------
+# Skills 
+--------------------------------------------------------------*/
+skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+.skill {
+  width: 150px;
+  margin: 10px;
+  text-align: center;
+}
+.skill i {
+  font-size: 48px; /* Adjust based on preference */
+  margin-bottom: 5px;
+}
+.skill p {
+  margin-top: 5px;
+  font-size: 14px;
 }
