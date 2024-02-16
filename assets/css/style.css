@@ -320,7 +320,7 @@ h6 {
 
 @media (min-width: 1024px) {
   #hero {
-    background-attachment: fixed;
+    background-attachment: float;
   }
 }
 
@@ -627,22 +627,104 @@ section {
 /*--------------------------------------------------------------
 # Skills 
 --------------------------------------------------------------*/
-skills-section {
+.skills-section {
+  margin: 10%;
+}
+
+.skills-heading {
+  color: #333;
+  text-align: center;
+  
+}
+
+.skills-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 20px;
   padding: 20px;
+  
 }
-.skill {
-  width: 150px;
-  margin: 10px;
+
+.skills-category, .skill-category {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  perspective: 1000px; /* Needed for 3D effect */
+  margin-bottom: 20px; /* Spacing between categories */
+}
+
+.category-title {
+  padding: 20px;
+  background-color: #667a8f;
+  background-image: linear-gradient(to right, #d9e0eb, #1f455e);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  font-size: 24px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
   text-align: center;
 }
-.skill i {
-  font-size: 48px; /* Adjust based on preference */
-  margin-bottom: 5px;
+
+.skills-list {
+  display: None;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 20px;
+  background: #f9f9f9;
+  transition: max-height 0.5s ease;
+  text-align: center;
 }
-.skill p {
-  margin-top: 5px;
-  font-size: 14px;
+
+.skill {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  background-color: #e1e1e1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transform: translateZ(0); /* For 3D effect */
+  transition: background-color 0.3s, transform 0.3s;
+  
+}
+
+.skill:hover {
+  background-color: #aeb4bb;
+  transform: scale(1.15) translateZ(50px); /* 3D effect on hover */
+}
+
+.skills-category:hover, .skill-category:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.skills-category:hover .skills-list, .skill-category:hover .skills-list {
+  display: block;
+  max-height: 500px; /* Adjust based on content */
+}
+
+/* 3D effect on hover over the category */
+.category-title:hover {
+  background-image: linear-gradient(to left, #d9e0eb, #1f455e);
+  transform: rotateX(10deg);
+}
+
+/* Animation for unfolding the skills list */
+@keyframes unfold {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-container {
+    flex-direction: column;
+  }
 }
