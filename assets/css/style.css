@@ -631,9 +631,11 @@ section {
   margin: 20%;
 }
 
+
 .skills-heading {
   color: #333;
   text-align: center;
+  margin-bottom: 5%;
   
 }
 
@@ -711,6 +713,7 @@ section {
   background-image: linear-gradient(to left, #d9e0eb, #1f455e);
   transform: rotateX(10deg);
 }
+
 
 /* Animation for unfolding the skills list */
 @keyframes unfold {
