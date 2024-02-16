@@ -81,6 +81,7 @@ h6 {
   overflow-y: auto;
   transition: all 0.5s ease-in-out;
   z-index: 9997;
+  padding-bottom: 80px;
 }
 
 @keyframes fadeIn {
@@ -617,11 +618,14 @@ section {
 
 @media (max-width: 1199px) {
   #footer {
-    position: static;
-    width: auto;
+    left: -300px;
+    position: fixed;
+    width: static;
     padding-right: 20px 15px;
   }
 }
+
+
 
 
 /*--------------------------------------------------------------
